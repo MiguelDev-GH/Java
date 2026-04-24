@@ -21,10 +21,8 @@ public class SavingsAccount {
     }
 
     public void calculateMonthlyInterest() {
-        double taxaMensal = (annualInterestRate / 100.0) / 12.0;
-
-        double interest = savingsBalance * taxaMensal;
-        savingsBalance += interest;
+        double taxaMensal = Math.pow(1 + annualInterestRate / 100.0, 1.0 / 12.0);
+        savingsBalance *= taxaMensal;
     }
 
     public double getSavingsBalance() {
